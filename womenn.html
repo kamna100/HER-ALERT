@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Women Safety Helpline</title>
+
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="newstylee.css" />
+  </head>
+  <body>
+    <!-- Dark Mode Toggle -->
+    <div class="toggle-container">
+      <button id="darkToggle">🌙 Dark Mode</button>
+    </div>
+
+    <header>
+      <h1>HER-ALERT</h1>
+      <h2>Women Safety Helpline</h2>
+      <p>Your Safety. Your Right. Help is One Click Away.</p>
+    </header>
+
+    <!-- Quick Action Buttons -->
+    <section class="quick-actions">
+      <button onclick="callPolice()">📞 Call Police</button>
+      <button onclick="callTrusted()">👨‍👩‍👧 Call Trusted Person</button>
+      <button onclick="playSiren()">🚨 Ring Siren</button>
+      <button onclick="searchNearbyPolice()">
+        🔍 Search Nearby Police Station
+      </button>
+    </section>
+
+    <!-- Emergency Numbers -->
+    <section class="emergency">
+      <h2>🚨 Emergency Helpline Numbers</h2>
+      <div class="numbers">
+        <div class="card">
+          <h3>Women Helpline</h3>
+          <p><b>1091</b></p>
+          <a href="#" class="btn" onclick="callNumber('1091')">Call Now</a>
+        </div>
+        <div class="card">
+          <h3>Police Emergency</h3>
+          <p><b>100</b></p>
+          <a href="#" class="btn" onclick="callNumber('100')">Call Now</a>
+        </div>
+        <div class="card">
+          <h3>Domestic Violence Helpline</h3>
+          <p><b>181</b></p>
+          <a href="#" class="btn" onclick="callNumber('181')">Call Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOS Section -->
+    <section class="sos-section">
+      <button id="sosBtn">🚨 SOS - Send Location</button>
+      <p id="sosStatus"></p>
+      <div id="map"></div>
+    </section>
+
+    <!-- Report & Location Section -->
+    <section class="report-location">
+      <div class="report-box">
+        <h2>Report an Incident</h2>
+        <form id="incidentForm">
+          <input type="text" placeholder="Your Name (optional)" />
+          <input type="text" placeholder="Contact Number (optional)" />
+          <input type="email" placeholder="Email (optional)" />
+          <textarea placeholder="Describe the incident..." required></textarea>
+          <button type="submit" class="btn">Submit Report</button>
+        </form>
+        <p id="reportStatus"></p>
+      </div>
+
+      <div class="location-box">
+        <h2>Your Coordinates</h2>
+        <p id="userLocation">Detecting location...</p>
+        <div id="map-mini"></div>
+      </div>
+    </section>
+
+    <!-- Safety Tips -->
+    <section class="tips">
+      <h2 class="tiph2">💡 Safety Tips for Women</h2>
+      <ul>
+        <li class="tip">Share your live location with trusted contacts.</li>
+        <li class="tip">Avoid isolated areas at night.</li>
+        <li class="tip">Carry a safety alarm or pepper spray.</li>
+        <li class="tip">Use government-approved safety apps.</li>
+        <li class="tip">Stay aware of your surroundings.</li>
+        <li class="tip">
+          Trust your instincts and leave uncomfortable situations immediately.
+        </li>
+        <li class="tip">
+          Inform someone about your travel plans before going out.
+        </li>
+        <li class="tip">
+          Keep emergency contacts saved and easily accessible on your phone.
+        </li>
+        <li class="tip">Avoid using headphones in unfamiliar places.</li>
+        <li class="tip">Keep your phone charged at all times.</li>
+      </ul>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz-section">
+      <h2>📝 Safety Quiz</h2>
+      <div class="quiz-box">
+        <p>Q1: What is the emergency number for police?</p>
+        <button onclick="checkAnswer(this,'100')">100</button>
+        <button onclick="checkAnswer(this,'100')">1091</button>
+        <button onclick="checkAnswer(this,'100')">181</button>
+        <p class="quiz-result"></p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Women Safety Helpline | All Rights Reserved</p>
+    </footer>
+
+    <!-- Leaflet Map JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- External JS -->
+    <script src="newscriptt.js"></script>
+  </body>
+</html>
